@@ -2,20 +2,20 @@
 
 ## 'makeCacheMatrix'  creates a special "matrix" object that can cache its inverse.
 makeCacheMatrix <- function(x = matrix()) {
-  int <- NULL
-  set <- function(a) {
+  int <- NULL          ## initalisng the integer to NULL
+ ## Setting  the values to function
+  set <- function(a) {  
     dig <<- a
     int <<- NULL
   }
-  get <- function() dig
-  setinverse <- function(inverse) int <<- inverse
+   ## getting  the values to function
+  get <- function() dig 
+  setinverse <- function(inverse) int <<- inverse 
   getinverse <- function() int
   list(set = set, get = get,
        setinverse = setinverse,
        getinverse = getinverse)
 }
-
-
 ## 'cacheSolve' function computes the inverse of the special "matrix" returned by makeCacheMatrix above and 
 ## if the inverse has already been calculated (and the matrix has not changed), 
 ## then cacheSolve retrieve the inverse from the cache.
