@@ -22,12 +22,12 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(dig, ...) {
   int <- int$getinverse()   ## Return a matrix that is the inverse of 'dig'
   if(!is.null(int)) {
-    message("getting cached data")
+    message("getting cached data") ## printing message to console
     return(int)
   }
   else{
   data <- dig$get()
-  int <- mean(data, ...)
+  int <- mean(data, ...) ## calculating mean
   dig$setinverse(int)
   int
   }
